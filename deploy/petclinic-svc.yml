@@ -11,5 +11,5 @@ spec:
   ports:
   - port: 80
     protocol: TCP
-    targetPort: <CHANGE_THIS>
+    targetPort: 8080
   type: NodePort

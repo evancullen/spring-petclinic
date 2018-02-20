@@ -5,7 +5,7 @@ metadata:
   labels:
     app: petclinic
 spec:
-  replicas: 1
+  replicas: 5
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -23,5 +23,5 @@ spec:
         imagePullPolicy: Always
         name: petclinic
         ports:
-        - containerPort: <CHANGE_THIS>
+        - containerPort: 8080
           protocol: TCP
