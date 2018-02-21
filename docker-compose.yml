@@ -1,3 +1,8 @@
+petclinic: 
+  image: initcron/petclinic:dev  
+  ports:
+    - 9999:8080 
+
 mysql:
   image: mysql
   ports:
@@ -5,5 +10,3 @@ mysql:
   environment:
     - MYSQL_ROOT_PASSWORD=root
     - MYSQL_DATABASE=test
-  volumes:
-    - "./conf.d:/etc/mysql/conf.d:ro"
