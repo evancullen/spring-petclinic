@@ -4,6 +4,13 @@ services:
     image: schoolofdevops/petclinic:dev  
     ports:
       - 9999:8080 
+    deploy:
+      replicas: 8
+      update_config:
+        parallelism: 2
+        delay: 20s
+      restart_policy:
+        condition: on-failure:5  
   mysql:
     image: mysql
     ports:
