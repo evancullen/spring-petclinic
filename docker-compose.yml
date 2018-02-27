@@ -1,5 +1,5 @@
 petclinic: 
-  image: initcron/petclinic:dev  
+  image: schoolofdevops/petclinic:dev  
   ports:
     - 9999:8080 
 
