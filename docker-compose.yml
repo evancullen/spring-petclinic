@@ -10,7 +10,7 @@ services:
         parallelism: 2
         delay: 20s
       restart_policy:
-        condition: on-failure:5  
+        condition: on-failure 
   mysql:
     image: mysql
     ports:
