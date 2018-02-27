@@ -1,13 +1,13 @@
-petclinic: 
-  image: schoolofdevops/petclinic:dev  
-  ports:
-    - 9999:8080 
-
-
-mysql:
-  image: mysql
-  ports:
-    - "3306:3306"
-  environment:
-    - MYSQL_ROOT_PASSWORD=root
-    - MYSQL_DATABASE=test
+version: '3'
+services:
+  petclinic: 
+    image: schoolofdevops/petclinic:dev  
+    ports:
+      - 9999:8080 
+  mysql:
+    image: mysql
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=test
