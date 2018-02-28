@@ -3,7 +3,7 @@ services:
   petclinic: 
     image: schoolofdevops/petclinic:dev  
     ports:
-      - 9999:8080 
+      - "9999:8080"
     deploy:
       replicas: 1
       update_config:
