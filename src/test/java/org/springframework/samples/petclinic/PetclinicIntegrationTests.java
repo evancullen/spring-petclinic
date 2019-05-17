@@ -13,25 +13,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.springframework.samples.petclinic.system;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+package org.springframework.samples.petclinic;
 
-/**
- * Controller used to showcase what happens when an exception is thrown
- *
- * @author Michael Isvy
- * <p/>
- * Also see how a view that resolves to "error" has been added ("error.html").
- */
-@Controller
-class CrashController {
+import org.junit.Test;
+import org.junit.runner.RunWith;
 
-    @GetMapping("/oups")
-    public String triggerException() {
-        throw new RuntimeException("Expected: controller used to showcase what "
-                + "happens when an exception is thrown");
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.samples.petclinic.vet.VetRepository;
+import org.springframework.test.context.junit4.SpringRunner;
+
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class PetclinicIntegrationTests {
+
+    @Autowired
+    private VetRepository vets;
+
+    @Test
+    public void testFindAll() throws Exception {
+        vets.findAll();
+        vets.findAll(); // served from cache
     }
-
 }
