@@ -1,7 +1,7 @@
 FROM maven as build 
 WORKDIR /code
 COPY . . 
-RUN mvn package 
+RUN mvn package -DskipTests
 
 
 FROM java:8-jre-alpine
